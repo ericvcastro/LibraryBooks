@@ -4,10 +4,8 @@ import com.api.librarybooks.dto.response.BookFavouriteBookResponse;
 import com.api.librarybooks.dto.response.BooksResponse;
 import com.api.librarybooks.services.LibraryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 
@@ -22,8 +20,13 @@ public class LibraryController {
         return service.searchBooks(q, startIndex, maxResults);
     }
 
-    @PostMapping("/books")
-    public BookFavouriteBookResponse searchBooks(@RequestParam String id) throws IOException, InterruptedException {
+    @PostMapping("/books/{id}")
+    public BookFavouriteBookResponse searchBooks(@PathVariable String id) throws IOException, InterruptedException {
         return service.postFavouriteBook(id);
+    }
+
+    @GetMapping("/with-stars")
+    public ResponseEntity<String> favouriteBooks(@RequestParam String startIndex, @RequestParam String maxResults) throws IOException, InterruptedException {
+        return service.favouriteBooks(startIndex, maxResults);
     }
 }

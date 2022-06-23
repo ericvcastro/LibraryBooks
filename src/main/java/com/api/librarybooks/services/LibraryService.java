@@ -18,6 +18,8 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.io.FileInputStream;
@@ -45,6 +47,23 @@ public class LibraryService {
     @Value("${google.UUID}")
     private String uuid;
 
+
+    public ResponseEntity<String> favouriteBooks( String startIndex, String maxResults) throws IOException, InterruptedException {
+        try{
+            OAuthTokenGoogle tokenToApi = this.getAccessTokenUser();
+            var client = HttpClient.newHttpClient();
+            String url = "https://www.googleapis.com/books/v1/mylibrary/bookshelves/0/?key="+apiKey+"&startIndex="+startIndex+"&maxResults="+maxResults;
+            var request = HttpRequest.newBuilder(URI.create(url))
+                    .header("Authorization", tokenToApi.getToken_type() + ' ' + tokenToApi.getAccess_token())
+                    .build();
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+            return ResponseEntity.status(response.statusCode()).body(response.body());
+        } catch(Exception err) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Server Error");
+        }
+
+    }
     public BooksResponse searchBooks(String q, String startIndex, String maxResults) throws IOException, InterruptedException {
         var client = HttpClient.newHttpClient();
         String url = "https://www.googleapis.com/books/v1/volumes?q=" + URLEncoder.encode(q, StandardCharsets.UTF_8) + "&startIndex="+startIndex+"&maxResults="+maxResults;
@@ -81,9 +100,8 @@ public class LibraryService {
         var client = HttpClient.newHttpClient();
         String url = "https://www.googleapis.com/books/v1/mylibrary/bookshelves/0/addVolume?volumeId="+ idBook +"&key=" + apiKey;
         var request = HttpRequest.newBuilder(URI.create(url))
-                .header("Authorization:", tokenToApi.getToken_type() + ' ' + tokenToApi.getAccess_token())
-                .header("Content-Type:", "application/json")
-                .header("Content-Length:", "CONTENT_LENGTH")
+                .header("Authorization", tokenToApi.getToken_type() + ' ' + tokenToApi.getAccess_token())
+                .header("Content-Type", "application/json")
                 .build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
@@ -95,7 +113,7 @@ public class LibraryService {
     };
 
     private OAuthTokenGoogle getAccessTokenUser() throws IOException, InterruptedException {
-        String code = "4/0AX4XfWiZCT9mK5EsV8_LzPYNUHEem8Mcccq3sV2HzUO_7A7AtB8y5FqT9d-K_Vw4K3htXA";
+        String code = "4/0AX4XfWh3jfbeEes2hdNB1-tWQYuF5MxXlD9AVh-hJhZpPt8Wbkk-DSx98O-ZpothglLspw";
         var values = new HashMap<String, String>() {{
             put("grant_type", "authorization_code");
             put("code", code);
@@ -118,8 +136,7 @@ public class LibraryService {
                 HttpResponse.BodyHandlers.ofString());
 
         ObjectMapper mapper = new ObjectMapper();
-        OAuthTokenGoogle tokens = mapper.readValue(response.body(), OAuthTokenGoogle.class);
 
-        return tokens;
+        return mapper.readValue(response.body(), OAuthTokenGoogle.class);
     }
 }
