@@ -52,7 +52,7 @@ public class LibraryService {
         try{
             OAuthTokenGoogle tokenToApi = this.getAccessTokenUser();
             var client = HttpClient.newHttpClient();
-            String url = "https://www.googleapis.com/books/v1/mylibrary/bookshelves/0/?key="+apiKey+"&startIndex="+startIndex+"&maxResults="+maxResults;
+            String url = "https://www.googleapis.com/books/v1/mylibrary/bookshelves/0/volumes?key="+apiKey+"&startIndex="+startIndex+"&maxResults="+maxResults;
             var request = HttpRequest.newBuilder(URI.create(url))
                     .header("Authorization", tokenToApi.getToken_type() + ' ' + tokenToApi.getAccess_token())
                     .build();
@@ -113,7 +113,7 @@ public class LibraryService {
     };
 
     private OAuthTokenGoogle getAccessTokenUser() throws IOException, InterruptedException {
-        String code = "4/0AX4XfWh3jfbeEes2hdNB1-tWQYuF5MxXlD9AVh-hJhZpPt8Wbkk-DSx98O-ZpothglLspw";
+        String code = "4/0AX4XfWgr9Lq0Xg7LRn1FXJAk0TyKDTaYE3yFuAHEhPOXG4IxwlcL92OAspZysJGERSxZPA";
         var values = new HashMap<String, String>() {{
             put("grant_type", "authorization_code");
             put("code", code);
