@@ -14,6 +14,10 @@ Exemplo:
 
 localhost:8080/books?q=senhor%20dos%20aneis&startIndex=0&maxResults=3
 
+* /with-stars {GET}
+
+Esta rota encontra a lista de favoritos da pratilheira.
+
 
 * /Books/{id} {POST}
 
