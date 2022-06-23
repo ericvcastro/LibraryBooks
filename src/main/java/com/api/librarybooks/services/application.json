@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "cultura-negra-brasileira",
+  "private_key_id": "8cefbd2b70799731874e39eb7169801f940a47f9",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCxmSlkpmop9eop\nPqJWSCcA+RIj+dXASbfGyrZ0/MvGhPtArsRbJ+UZY7n49rWrmUg+BMntGgvBeNo0\nBqBmaZ060EtLPf+4jclHNp5CVeEPPM3ySI5Whdi9tA+1Q9WYiyhb7dhdABfKzor7\nH+PCS4O/vifsgTgD6Zu3zIUrgY0qaJHAmZCU8aa4fAcasDlrWTopv2Qt7N+58GLx\nTIW3fSitsScRE5zw9LpZOV34kwdsp0hXO3qqj6WR8hhO6BYyJylNaLO/S9JK5EqB\ngIxcqnZCco7jvmW0qjGzjE/M8xMDicCch0IC/g9v8mNWduiWPnjyyt3tGW0Gd+My\nJV93i2INAgMBAAECggEAEFte6Jo7JOo1St8t7GxwyzIlbZLREQi5GGILM/MkgYA1\n89sk0pB2FUSOGFQAn3Faqfue7Wt8sbEDx87kbwpDJOuSQ7fOGZ1VcG2jXdCzDcg3\n35y3H1jsgWxYFgXNYmNOsEjTqJ0dk9w6CK8DNx3lYH+PBcVQ92tIoEEB8uPXsJQR\nZAHfGywRl/08Zu0AAWSEssZu1pI+miXQU/drNbma5Xz4FR6ipZX0RZZFz04gmD3c\n+wQLj/KP0U+UKwjBi33+jPgjtaHOjEU1KDcmN1ywQZ0xmJh8wuYzIh6Gj8O9CGnG\nWKUL7GvgRdjEm9JeoaP85db2+j3y3amjges989FLMQKBgQDxaFk7WnNxS/QdxNYx\nlhiY6UXiS+NIxf1wEEM8Iec5o12QkH7BZZ3ICrptJYyj7F0VR45oPWi6haH4mYaa\nxXBSNwTELLsfLEs0Dk2hawlPozo5X71toFTsQaZZFRF4YF993z/B2PVN+G3k7ZR2\nGDg5RyWwo1zRr/h4A+cLoZ32zwKBgQC8VWYIVVUfByFtULPnqvzZ8cthGSCctFAm\ni+IiLWMDRFojON/aLX+VW8pKVPqEe294aQmXQv0xzAqsvteIeiLR309hKX0DRnnP\n0NT/tENZ7YlKPjCVM0DTxEb5VeV43u6Y0X5F6ZN/vV5jaRj4WEBUoSIA9WHMNpUV\nhtpo6XgQYwKBgQCMrYFqbCBgAqIEgwNLLCuzWCUoZY7ShsZU+rUjoqIrXX8V0o57\nRys2OsI+/qXBlOj9kJB1QGv6XgtwYo8lPC9jSbqWU3bMCLTeZgNpMIXhib5RVvB9\npPQ4JV26BeQDYS3knSd7YGI7CK2JvcVJOH3zKvnUwK5DZ6eE0MlgZtM10wKBgH96\n6tLPOAwFnpnJG82/zuGTqs/x20JXRz2gSBRMVo4akUzwLY4YaBjohfhkpyJQDzcZ\nGlXaEVrIu50MnQYTbkhTeP7Sv30dEk0aFWN0WHahs+GeUPJdPA9b95LEksyLUkP8\n4hVesumvfBmcRTutOPZQD51Ie8doVue4XVTQW+XzAoGAE8NxRByW/LoGoUkoaAvI\nuRMzDbryCxRKo48tkAlNGJjxxv6h2Q+Wz6D0+F0mwnf2xFMd2Po3yiqZShcE9qhC\nvQCvFCQkYv1MIiYg7dzTQRwRX0hWkbS1J3C22kYgVvVqktVuJWUVal+EEFfkeJJ/\nB41Z/29Ryui9bv2Jb1iwPPQ=\n-----END PRIVATE KEY-----\n",
+  "client_email": "librarybooks@cultura-negra-brasileira.iam.gserviceaccount.com",
+  "client_id": "117320922713416451750",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/librarybooks%40cultura-negra-brasileira.iam.gserviceaccount.com"
+}
